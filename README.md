@@ -1,4 +1,4 @@
-# Clasic Pong
+# Classic Pong
 
 ## Install
 
