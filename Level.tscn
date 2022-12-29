@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PlayerIA.gd" type="Script" id=3]
+[ext_resource path="res://Level.gd" type="Script" id=4]
+[ext_resource path="res://IBMPlexMono-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 960, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 540 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 5 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="marginTop" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="marginTop"]
+position = Vector2( 960, -10 )
+shape = SubResource( 1 )
+
+[node name="marginBottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="marginBottom"]
+position = Vector2( 960, 1090 )
+shape = SubResource( 1 )
+
+[node name="Arco-left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arco-left"]
+position = Vector2( -10, 540 )
+shape = SubResource( 2 )
+
+[node name="Arco-rigth" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arco-rigth"]
+position = Vector2( 1930, 540 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 50, 460 )
+
+[node name="PlayerIA" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1870, 460 )
+script = ExtResource( 3 )
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 935, 494 )
+
+[node name="PlayerScore" type="Label" parent="."]
+margin_right = 960.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.694118, 0.937255, 0.666667, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="IAScore" type="Label" parent="."]
+margin_left = 960.0
+margin_right = 1920.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.694118, 0.937255, 0.666667, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="RestartTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Arco-left" to="." method="_on_Arcoleft_body_entered"]
+[connection signal="body_entered" from="Arco-rigth" to="." method="_on_Arcorigth_body_entered"]
+[connection signal="timeout" from="RestartTimer" to="Ball" method="_on_RestartTimer_timeout"]
