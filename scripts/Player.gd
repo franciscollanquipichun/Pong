@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-# velocidad en pixeles
-var speed = 400
+var speed = 900
 
 func _physics_process(delta):
 	# 0,0

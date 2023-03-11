@@ -13,7 +13,7 @@ func _ready():
 
 func reset_ball():
 	timer.stop()
-	speed = 600
+	speed = 900
 	direction.x = [-1,1][randi() % 2]
 	direction.y = [-0.8, 0.8][randi() % 2]
 	is_moving = true

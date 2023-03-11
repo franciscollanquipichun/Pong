@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Retro Beeep 06.wav-fd82dca8fb65c91e1dfa5bcef2b221ad.sample"
+path="res://.import/Retro Beeep 06.wav-b2bbb03716a1b48e5de4510658406996.sample"
 
 [deps]
 
-source_file="res://Retro Beeep 06.wav"
-dest_files=[ "res://.import/Retro Beeep 06.wav-fd82dca8fb65c91e1dfa5bcef2b221ad.sample" ]
+source_file="res://assets/Retro Beeep 06.wav"
+dest_files=[ "res://.import/Retro Beeep 06.wav-b2bbb03716a1b48e5de4510658406996.sample" ]
 
 [params]
 

@@ -13,7 +13,7 @@ func _process(delta):
 func _restart_game():
 	$Ball.is_moving = false
 	$Ball.direction = Vector2.ZERO
-	$Ball.position = Vector2(960,540)
+	$Ball.position = Vector2(944,532)
 	#$Ball.reset_ball()
 	# agrega tiempo de espera antes de iniciar el juego
 	$RestartTimer.start()
