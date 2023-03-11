@@ -7,8 +7,8 @@ func _ready():
 	_restart_game()
 
 func _process(delta):
-	$PlayerScore.text = str(playerScore)
-	$IAScore.text = str(IAScore)
+	$Background/PlayerScore.text = str(playerScore)
+	$Background/IAScore.text = str(IAScore)
 
 func _restart_game():
 	$Ball.is_moving = false
